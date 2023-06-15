@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Form</title>
+    <link rel="stylesheet" type="text/css" href="your-style.css">
+</head>
+
+<body>
+    <form>
+        <div class="form-container">
+            <div class="form-group-label">
+                <label for="en">En</label>
+                <label for="boy">Boy</label>
+                <label for="renkli">R</label>
+                <label for="beyaz">B</label>
+                <label for="adet">Adet</label>
+                <label for="duble">Duble</label>
+                <label for="fiyat">Fiyat</label>
+            </div>
+            <script>
+                for (let i = 0; i < 10; i++) {
+                    document.write(`
+          <div class="form-group">
+            <input type="text" id="en${i}" name="en${i}">
+            <input type="text" id="boy${i}" name="boy${i}">
+            <input type="radio" id="renk_r${i}" name="renk${i}" value="r">
+            <input type="radio" id="renk_b${i}" name="renk${i}" value="b">
+            <select id="adet${i}" name="adet${i}">
+              <option value="1">1</option>
+              <option value="2">2</option>
+              <option value="3">3</option>
+              <option value="4">4</option>
+              <option value="5">5</option>
+            </select>
+            <input type="checkbox" id="duble${i}" name="duble${i}">
+            <span id="fiyat${i}"></span>
+
+            
+          </div>
+        `);
+                }
+            </script>
+        </div>
+
+        <input type="submit" value="Hesapla">
+        <input type="button" value="Sıfırla" onclick="resetForm()">
+    </form>
+
+    <div class="result">
+        <label>Toplam Fiyat: <span id="toplam_fiyat"></span></label>
+    </div>
+
+    <script src="your-script.js"></script>
+</body>
+
+</html>
